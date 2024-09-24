@@ -1,2 +1,5 @@
-# css-animations
-A repo consisting interesting animations and animation references
+# List of animations
+
+This repo contains reference for all the animations I find interesting.
+
+- Sliding Cards: 

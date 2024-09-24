@@ -1,0 +1,80 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-family: sans-serif;
+  height: 100vh;
+}
+
+main {
+  background-color: #11161a;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.item {
+  width: 120px;
+  height: auto;
+}
+
+.item > img {
+  height: 100%;
+  width: 100%;
+}
+
+.list {
+  display: flex;
+  gap: 10px;
+}
+
+/* Animations */
+.list {
+  transform-style: preserve-3d;
+  transform: perspective(1000px);
+}
+
+.list .item {
+  transition: 0.5s;
+  filter: brightness(0);
+}
+
+.list .item:hover {
+  filter: brightness(1);
+  transform: translateZ(200px);
+}
+
+.list .item:hover + * {
+  filter: brightness(0.6);
+  transform: translateZ(150px) rotateY(40deg);
+}
+
+.list .item:hover + * + * {
+  filter: brightness(0.4);
+  transform: translateZ(70px) rotateY(20deg);
+}
+
+.list .item:hover + * + * + * {
+  filter: brightness(0.2);
+  transform: translateZ(30px) rotateY(10deg);
+}
+
+.list .item:has(+ *:hover) {
+  filter: brightness(0.6);
+  transform: translateZ(150px) rotateY(-40deg);
+}
+
+.list .item:has(+ * + *:hover) {
+  filter: brightness(0.4);
+  transform: translateZ(70px) rotateY(-20deg);
+}
+
+.list .item:has(+ * + * + *:hover) {
+  filter: brightness(0.2);
+  transform: translateZ(30px) rotateY(-10deg);
+}
