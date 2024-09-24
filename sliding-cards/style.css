@@ -18,6 +18,10 @@ main {
   align-items: center;
 }
 
+p {
+  display: none;
+}
+
 .item {
   width: 120px;
   height: auto;
@@ -77,4 +81,22 @@ main {
 .list .item:has(+ * + * + *:hover) {
   filter: brightness(0.2);
   transform: translateZ(30px) rotateY(-10deg);
+}
+
+@media screen and (max-width: 1280px) {
+  .item {
+    width: 80px;
+    height: auto;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  p {
+    text-align: center;
+    display: block;
+  }
+
+  .list {
+    display: none;
+  }
 }
